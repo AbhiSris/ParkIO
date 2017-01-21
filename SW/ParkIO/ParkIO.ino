@@ -7,53 +7,70 @@
 #define tr 7
 #define er 6
 
-//Sonar 1
-int echoPin1 = 2;
-int initPin1 = 3;
-int distance1 = 0;
 
-//Sonar 2
-int echoPin2 = 4;
-int initPin2 = 5;
-int distance2 = 0;
+Ultrasonic s[5] = {Ultrasonic(0,0), Ultrasonic(0,0), Ultrasonic(0,0), Ultrasonic(0,0), Ultrasonic(0,0)};
+ 
 
-Ultrasonic s1(2,3);
-Ultrasonic s2(4,5);
+////Sonar 1
+//int echoPin1 = 2;
+//int initPin1 = 3;
+//int distance1 = 0;
+//
+////Sonar 2
+//int echoPin2 = 4;
+//int initPin2 = 5;
+//int distance2 = 0;
+
+int numTotalSpots = 10; // Get from database.
 
 void setup() {
   Serial.begin (9600);
-//  Serial.begin (9600);
-//  pinMode(initPin1, OUTPUT);
-//  pinMode(echoPin1, INPUT);
-//  pinMode(initPin2, OUTPUT);
-//  pinMode(echoPin2, INPUT);
-  s1.initPinModes();
-  s2.initPinModes();
-}
+  for (int i = 0; i < 5; i++){
+    s[i] = Ultrasonic(i*2, i*2+1);    
+    s[i].initPinModes();
+  }
 
+}
+bool is_car_parked(int dist){
+  if (dist <= 10){
+    return true;
+  }
+  return false;  
+}
 void loop() {
+  //  Serial.print("L: ");
+  //  distance1 = getDistance(initPin1, echoPin1);
+  //  printDistance(distance1);
+  //  delay(150);
+  //
+  //  Serial.print("C: ");
+  //  distance2 = getDistance();
+  //  printDistance(distance2);
+  //  delay(150);
+  for (int i = 0; i < 5; i++){
+    bool currCarParked = is_car_parked(s[i].get_distance());
+    if (currCarParked == true){
+      //send msg to database
+      Serial.print("Spot #: ");
+      Serial.print(i);
+      Serial.println(" Taken");
+    }
+  }
+  Serial.println();
+  
 //  Serial.print("L: ");
-//  distance1 = getDistance(initPin1, echoPin1);
-//  printDistance(distance1);
+//  distance1 = s1.get_distance();
+//  s1.print_distance();
 //  delay(150);
 //
-//  Serial.print("C: ");
-//  distance2 = getDistance(initPin2, echoPin2);
-//  printDistance(distance2);
+//  Serial.print("R: ");
+//  distance2 = s2.get_distance();
+//  s2.print_distance();
 //  delay(150);
-
-
-  Serial.print("L: ");
-  s1.get_distance();
-  s1.print_distance();
-  delay(150);
-  
-  Serial.print("R: ");
-  s2.get_distance();
-  s2.print_distance();
-  delay(150);
-  Serial.println(" ");
+//  Serial.println(" ");
 }
+
+
 
 //int getDistance (int initPin, int echoPin) {
 //
