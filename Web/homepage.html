@@ -1,0 +1,265 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Octavio Harris</title>
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- jQuery transition -->
+		<script src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+		<style>
+			
+			body {
+				background-size: 100% 100%;
+				padding-top:15px; 
+			}
+
+			html, body{
+				height: 100%;
+				overflow: none;
+			}
+
+			#header {
+				position: fixed;
+			}
+
+			#footer {
+				padding: 0px; 
+				width: 100%; 
+				background-color: rgba(20,20,20,0.7);
+			}
+
+			#about-me-title {
+				width: 100%;
+				border: 3px transparent solid;
+				text-align: center;
+				font-size: 30px;
+				background-color: rgba(10,10,10,0.8);
+			}
+
+			.upArrow {
+				  -moz-transition: 0.5s ease-in-out;
+				  -webkit-transition: 0.5s ease-in-out;
+				  transition: 0.5s ease-in-out;
+			}
+
+			.spin {
+				transform: rotate(180deg);
+				-moz-transform: rotate(180deg);
+				-webkit-transform: rotate(180deg);
+			}
+
+			#about-me-title:hover {
+				background-color: rgba(255,255,255, 0.2);
+				border: 3px white solid;
+			}
+
+			.icon {
+				height: 30px;
+				width: 30px;
+				border-radius: 5px;
+			}
+
+			.clickable {
+				cursor: pointer;
+			}
+
+			.btn-grey {
+				background-color: #999999;
+			}
+
+			.btn-grey:hover {
+				background-color: #AAAAAA;	
+			}
+
+			.right-align {
+				text-align: right;
+			}
+			.popup {
+                z-index: 9999;
+                display: none;
+			}
+
+			.centered {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);  
+			}
+
+			.fixed {
+				position: fixed;
+			}
+
+			.absolute {
+				position: absolute;
+			}
+
+			.border-white {
+			    border-color: white;
+			} 
+
+			.border-transparent {
+				border-color: transparent;
+			}
+
+			.border-hover-white:hover {
+				border-color: white;
+			}
+
+			.btn-transparent {
+				padding: 12.5px 20px 12.5px 20px;
+				font-style: sans-serif;
+				font-weight: bold;
+			    background-repeat: no-repeat;
+			    overflow: hidden;
+			    outline:none;
+			    background-color: transparent;
+			    border-width: 3px;
+			    border-style: solid;
+			    border-color: white;
+			}
+
+			.btn-transparent-hover {
+				padding: 12.5px 20px 12.5px 20px;
+				font-style: sans-serif;
+				font-weight: bold;
+			    background-repeat: no-repeat;
+			    overflow: hidden;
+			    outline:none;
+			    background-color: transparent;
+			    border-width: 3px;
+			    border-style: solid;
+			    border-color: transparent;
+			}
+
+			.btn-transparent-hover:hover {
+				border-color: white;
+				background-color: rgba(255, 255, 255, 0.2);
+				color: white;
+			}
+
+			.btn-transparent:hover {
+				background-color: rgba(255, 255, 255, 0.2);
+				color: white;
+			}
+
+			.white-text {
+				color: white;
+				font-style: sans-serif;
+				font-weight:  bold;
+			}
+
+			.bg-white {
+				background-color: white;
+			}
+
+			#name {
+				color: white;
+				font-style: sans-serif;
+				font-weight:  bold;
+				font-stretch: normal;
+				font-size: 40px;
+				text-align: center;
+			}
+			
+			#options{
+				color: white;
+				font-style: sans-serif;
+				font-weight:  bold;
+				font-stretch: normal;
+				font-size: 40px;
+				text-align: center;
+			}
+
+			#contactDetailsPopup {
+				background-color: rgba(10,10,10,1);
+                box-shadow: 5px 5px 10px #000;   
+                border: 3px solid white;
+                color: white;
+                margin: 0px;
+                padding: 10px;
+			}
+
+		</style>
+
+		<script type="text/javascript" language="javascript">
+			var fadeDuration = 250;
+			var minimized = true;
+
+			$(window.document).ready
+			(
+				function()
+				{
+					$('#body').height('95%');
+					$('#footer').height('5%'); 
+				}
+			);
+			function toggleContactDetails()
+			{
+				$('#contactDetailsPopup').fadeToggle(fadeDuration);
+			}
+			function openPortfolio()
+			{
+				window.open('portfolio.htm');
+			}
+			function rotateArrows()
+			{
+				var leftArrow = $('#leftUpArrow');
+				var rightArrow = $('#rightUpArrow');
+
+				leftArrow.toggleClass('spin');
+				rightArrow.toggleClass('spin');
+			}
+		</script>
+	</head>
+
+	<!-- <body background="C:\\Users\\Octavio\\Pictures\\WebsiteBackground_water.jpg" > -->
+	<body background="mountain.jpg">
+
+
+		<!-- BODY TITLE -->
+		<div class="body container" id="body" style="height: 95%">
+			<div class="top" id="name">
+				<strong>OCTAVIO HARRIS</strong><br/>
+			</div>
+			<div  class="top" id="options">
+				<a href="portfolio.htm" class="clickable btn btn-transparent">PORTFOLIO</a>
+				<a href="Contact.htm" class="clickable btn btn-transparent">CONTACT</a>
+				<!--<button class="clickable btn btn-transparent" onclick="toggleContactDetails();">CONTACT</button>-->
+			</div>
+		</div>
+		
+		
+
+		<!-- Contact Details Popup -->
+		<div class="popup fixed centered" id="contactDetailsPopup">
+			<table class="table table-condensed">
+				<tbody>
+					<tr>
+						<td>Phone</td>
+						<td>XXX-XXX-XXXX</td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>xxxxxxxxxxx@gmail.com</td>
+					</tr>			
+				</tbody>
+			</table>
+			<button class="btn clickable btn-transparent" style="width: 100%" onclick="toggleContactDetails();">
+				Hide Contact Details
+			</button>
+		</div>
+	</body>
+</html>
