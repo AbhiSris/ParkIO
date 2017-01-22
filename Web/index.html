@@ -11,14 +11,14 @@
 		<title>ParkIt</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
 		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 
 $('.results').html('Hello World!');
@@ -32,114 +32,69 @@ $('.results').html('Hello World!');
 			<section id="header">
 				<header>
 					<h1>ParkIt</h1>
-					<p>By Presish Bhattachan, Nikhil Boddu, Steven Jia, and Abhi Srikantharajah</p>
+					<p>Never waste time finding your parking spot again</p>
 				</header>
 				<footer>
-					<a href="#banner" class="button style2 scrolly-middle">Web application for you to access free parking spots.</a>
+					<a href="#banner" class="button style2 scrolly-middle">Find out how</a>
 				</footer>
 			</section>
 
 		<!-- Banner -->
 			<section id="banner">
 				<header>
-					<h2>Have you ever been driving around in a parking lot, not knowing where the nearest spot available is?</h2>
+					<h2>When a parking lot nears capacity, <br/> finding a spot can take forever.</h2>
 				</header>
-				<p>ParkIt is an application that allows you to look and identify free parking spots (In real time), to effectively speed up your process to go where you need to be.</p>
+				<p>ParkIt is an application that allows <br/> you to quickly find free parking spots by <br />
+                showing you the live avaibility of each spot</p>
 				<footer>
-					<a href="#maps" class="button style2 scrolly-middle">Check out the <strong>live</strong> parking lots being tracked right now!</a>
+					<a href="#first" class="button style2 scrolly-middle">Check it out</a>
 				</footer>
 			</section>
-
-		<!-- Feature 2 -->
-		<section id = "maps">
+        
+        <!-- Feature 1 -->
+			<article id="first" class="container box style1 right">
+				<a class="image fit"><img src="images/parking.jpg"  /></a>
+				<div class="inner">
 					<header>
-						<h1> Live feed of parking spots</h1>
-						<div class="dropdown">
-  							<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Parking Lots
-  							<span class="caret"></span></button>
- 							<ul class="dropdown-menu">
-    							<li><a href="#">ParkingLot1</a></li>
-    							<li><a href="#">ParkingLot2</a></li>
-   								<li><a href="#">ParkingLot3</a></li>
-  							</ul>
-						 </div>
+						<h2>Parking Lot #1</h2>
 					</header>
-					<div id = "header" style="margin-left:25%; top: -200px; width: 100%;">
-					<div style="float:left;"><img src="images/parking.jpg" /></div>
-					<div style="float:left;"> <table style="width:100%;" >
-					<tr>
-					<th> Spot Number </th>
-					<th> Is Free or Not? </th>
-						</tr>
-						<tr>
-						<th><div class="results"></div></th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-												<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-												<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-												<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
-						<tr>
-						<th> 1 </th>
-						<th> No </th>
-						</tr>
+                    <p><br/>Number of Free Spots: 2<br/>
+                     Number of Total Spots: 2<br/><br/><br/></p>
+				</div>
+			</article>
+           
+            <section id="footer">
+					<div class="table-wrapper">
+						<table class="default">
+							<thead>
+								<tr>
+									<th align="center">Parking Spot</th>
+									<th align="center">Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Free</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Free</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Unavailable</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Unavailable</td>
+								</tr>
+							</tbody>
 						</table>
-						</div>
-						</div>
-					 
-		</section>
+					</div>
+				</section>   
+              
+        
 		<!-- Generic -->
 		<!--
 			<article class="container box style3">
@@ -297,13 +252,6 @@ $('.results').html('Hello World!');
 			</article>
 		-->
 
-		<section id="footer">
-			<div class="copyright">
-				<ul class="menu">
-					<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</div>
-		</section>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
